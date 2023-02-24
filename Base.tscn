@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Base.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Base" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 325, 172 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="Enemy"]
+position = Vector2( -2, -1 )
+current = true
+zoom = Vector2( 0.8, 0.8 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 101, 136 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 328, 238 )
+scale = Vector2( 10, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+rect_scale = Vector2( 0.998439, 1.01398 )
+rect_pivot_offset = Vector2( 32, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 615, 223 )
+scale = Vector2( 1, 1.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+rect_scale = Vector2( 0.998439, 1.01398 )
+rect_pivot_offset = Vector2( 32, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 1 )
