@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "RayCast2D",
+"class": "DetectionCast",
+"language": "GDScript",
+"path": "res://DetectionCast.gd"
+} ]
+_global_script_class_icons={
+"DetectionCast": ""
+}
+
 [application]
 
 config/name="AIDetectionTest"
